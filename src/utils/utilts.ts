@@ -17,7 +17,7 @@ const generateRandomCells = (): ObjectGame => {
     id: uuidv4(),
     shape: randomShape,
     color: randomColor,
-    isRevealed: false,
+    pairId :  uuidv4()
   };
 };
 
