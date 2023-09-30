@@ -4,7 +4,7 @@
 interface ObjectGame {
   id : String ,
   color? : 'red' | 'green' | 'blue' | undefined,
-  shape? : "square" | "circle"| "trangle"| undefined,
+  shape? : "square" | "circle"| "triangle"| undefined,
   pairId : String
 }
 

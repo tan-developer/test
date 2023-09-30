@@ -21,4 +21,4 @@ const generateRandomCells = (): ObjectGame => {
   };
 };
 
-export {generateRandomCells}
+export {generateRandomCells ,generateRandomElement}

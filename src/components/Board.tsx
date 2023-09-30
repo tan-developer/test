@@ -45,7 +45,6 @@ const Board: React.FC = () => {
       if(lastIndex?.id === e.id && lastIndex.pairId !== e.pairId) {
         setSelectedCells(preState => [...preState , e])
       }else {
-        console.log(e)
         setSelectedCells([])
       }
     }else {
@@ -59,7 +58,7 @@ const Board: React.FC = () => {
         <Cell
           {...element}
           isActive={selectedCells.some((vendor) => {
-            return vendor.id === element.id && vendor.pairId === vendor.pairId
+            return vendor.id === element.id && element.pairId === vendor.pairId
           })}
           onClick={handleCellClick}
         />
