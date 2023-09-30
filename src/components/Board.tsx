@@ -29,7 +29,7 @@ const Board: React.FC = () => {
     randomCells.forEach((element) => {
       const copyElement = { ...element };
       copyElement.pairId = uuidv4()
-      newArray.push(element, element);
+      newArray.push(element, copyElement);
     });
 
     for (let i = newArray.length - 1; i > 0; i--) {
@@ -40,11 +40,16 @@ const Board: React.FC = () => {
   }, []);
 
   const handleCellClick = (e: ObjectGame) => {
-    if(selectedCells.some((vendor) => vendor.id === e.id)) {
-    }else if (selectedCells.length > 0) {
-      setSelectedCells([])
+    if(selectedCells.length % 2 !== 0) {
+      const lastIndex = [...selectedCells].pop()
+      if(lastIndex?.id === e.id && lastIndex.pairId !== e.pairId) {
+        setSelectedCells(preState => [...preState , e])
+      }else {
+        console.log(e)
+        setSelectedCells([])
+      }
     }else {
-      setSelectedCells([...selectedCells, e]);
+      setSelectedCells(preState => [...preState , e])
     }
   };
   console.log(selectedCells)
@@ -53,7 +58,9 @@ const Board: React.FC = () => {
       {cells.map((element) => (
         <Cell
           {...element}
-          isActive={selectedCells.some((vendor) => vendor.id === element.id)}
+          isActive={selectedCells.some((vendor) => {
+            return vendor.id === element.id && vendor.pairId === vendor.pairId
+          })}
           onClick={handleCellClick}
         />
       ))}
