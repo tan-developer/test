@@ -1,6 +1,10 @@
 .flip-container {
   perspective: 1000px;
   transform-style: preserve-3d;
+  box-shadow: 3px 1px 12px 0px rgba(0, 0, 0, 0.22);
+  -webkit-box-shadow: 3px 1px 12px 0px rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: 3px 1px 12px 0px rgba(0, 0, 0, 0.22);
+  border-radius: 4px;
 }
 .flip-container.active .back {
   transform: rotateY(0deg);
@@ -13,6 +17,7 @@
 .back {
   width: 24vw;
   height: 24vh;
+  border-radius: 4px;
 }
 
 .flipper {
@@ -66,21 +71,21 @@ h1 {
   color: #fff;
 }
 .green {
-	background-color : rgb(52, 196, 52);
+  background-color: rgb(52, 196, 52);
 }
 .red {
-	background-color : rgb(249, 77, 77);
+  background-color: rgb(249, 77, 77);
 }
 .blue {
-	background-color : rgb(34, 34, 230);
+  background-color: rgb(34, 34, 230);
 }
 .orange {
-	background-color: orange;
+  background-color: orange;
 }
 .yellow {
-	background-color: yellow;
+  background-color: yellow;
 }
 .back > svg {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 }
